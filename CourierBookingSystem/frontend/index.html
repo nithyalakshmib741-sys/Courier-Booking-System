@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CourierBook | Courier Booking System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            📦 Courier<span>Book</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#booking">Book Courier</a>
+            <a href="#bookings">Bookings</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="tag">FAST • SAFE • RELIABLE</p>
+
+            <h1>
+                Send your package
+                <span>with confidence.</span>
+            </h1>
+
+            <p class="hero-description">
+                Book and manage your courier deliveries
+                quickly and easily from one place.
+            </p>
+
+            <a href="#booking" class="hero-button">
+                Book a Courier →
+            </a>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="package-icon">
+                📦
+            </div>
+
+            <h3>Easy Courier Booking</h3>
+
+            <p>
+                Create your booking, get a tracking number
+                and manage your deliveries easily.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATISTICS -->
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">📦</div>
+
+            <h2 id="totalBookings">0</h2>
+
+            <p>Total Bookings</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">🚚</div>
+
+            <h2>24/7</h2>
+
+            <p>Service Support</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">⚡</div>
+
+            <h2>100%</h2>
+
+            <p>Easy Booking</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="section">
+
+        <div class="section-heading">
+
+            <p class="tag">BOOK NOW</p>
+
+            <h2>Courier Booking</h2>
+
+            <p>
+                Enter the details below to create your courier booking.
+            </p>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <form id="bookingForm">
+
+
+                <!-- SENDER & RECEIVER -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="senderName">
+                            Sender Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="senderName"
+                            placeholder="Enter sender name"
+                        >
+
+                        <small id="senderError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="receiverName">
+                            Receiver Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="receiverName"
+                            placeholder="Enter receiver name"
+                        >
+
+                        <small id="receiverError"></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE & DATE -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter 10-digit phone number"
+                            maxlength="10"
+                        >
+
+                        <small id="phoneError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="bookingDate">
+                            Booking Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="bookingDate"
+                        >
+
+                        <small id="dateError"></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADDRESSES -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="pickupAddress">
+                            Pickup Address
+                        </label>
+
+                        <textarea
+                            id="pickupAddress"
+                            placeholder="Enter pickup address"
+                        ></textarea>
+
+                        <small id="pickupError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="deliveryAddress">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="deliveryAddress"
+                            placeholder="Enter delivery address"
+                        ></textarea>
+
+                        <small id="deliveryError"></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PARCEL DETAILS -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="parcelType">
+                            Parcel Type
+                        </label>
+
+                        <select id="parcelType">
+
+                            <option value="">
+                                Select parcel type
+                            </option>
+
+                            <option value="Document">
+                                📄 Document
+                            </option>
+
+                            <option value="Clothing">
+                                👕 Clothing
+                            </option>
+
+                            <option value="Electronics">
+                                💻 Electronics
+                            </option>
+
+                            <option value="Food">
+                                🍱 Food
+                            </option>
+
+                            <option value="Other">
+                                📦 Other
+                            </option>
+
+                        </select>
+
+                        <small id="parcelError"></small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="weight">
+                            Parcel Weight (kg)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="weight"
+                            placeholder="Example: 2.5"
+                            min="0.1"
+                            step="0.1"
+                        >
+
+                        <small id="weightError"></small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DELIVERY TYPE -->
+                <div class="form-group">
+
+                    <label for="deliveryType">
+                        Delivery Type
+                    </label>
+
+                    <select id="deliveryType">
+
+                        <option value="">
+                            Select delivery type
+                        </option>
+
+                        <option value="Standard">
+                            🚚 Standard Delivery
+                        </option>
+
+                        <option value="Express">
+                            ⚡ Express Delivery
+                        </option>
+
+                    </select>
+
+                    <small id="deliveryTypeError"></small>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Book Courier →
+                </button>
+
+
+                <!-- MESSAGE -->
+                <div id="message"></div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKINGS SECTION -->
+    <section id="bookings" class="section bookings-section">
+
+        <div class="section-heading">
+
+            <p class="tag">MANAGE</p>
+
+            <h2>Recent Bookings</h2>
+
+            <p>
+                View and manage your courier bookings.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search by tracking number, sender or receiver..."
+            >
+
+        </div>
+
+
+        <!-- TABLE -->
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Tracking No.</th>
+                        <th>Sender</th>
+                        <th>Receiver</th>
+                        <th>Parcel</th>
+                        <th>Weight</th>
+                        <th>Delivery</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="bookingTable">
+
+                    <tr>
+
+                        <td
+                            colspan="8"
+                            class="empty-message"
+                        >
+                            No bookings yet.
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            📦 CourierBook
+        </div>
+
+        <p>
+            Simple. Fast. Reliable.
+        </p>
+
+        <p class="copyright">
+            © 2026 CourierBook | Courier Booking System
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
